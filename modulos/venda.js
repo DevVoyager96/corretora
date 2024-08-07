@@ -16,19 +16,19 @@ const model = (id = proxId++) => {
   if (corretor.index()) {
     id_corretor = parseInt(prompt("ID do corretor: "));
   } else {
-    console.log("Cadastre uma corretora para inserir um corretor");
+    console.log("Cadastre um corretor para realizar uma venda");
   }
 
   if (cliente.index()) {
     id_cliente = parseInt(prompt("ID do cliente: "));
   } else {
-    console.log("Cadastre um para inserir um cliente");
+    console.log("Cadastre um cliente para realizar uma venda");
   }
 
   if (imovel.index()) {
     id_imovel = parseInt(prompt("ID do imóvel: "));
   } else {
-    console.log("Cadastre um para inserir um cliente");
+    console.log("Cadastre um imóvel para realizar uma venda");
   }
 
   if (corretor.show(id_corretor) &&
