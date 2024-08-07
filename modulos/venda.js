@@ -25,27 +25,28 @@ const model = (id = proxId++) => {
     console.log("Cadastre um cliente para realizar uma venda");
   }
 
-  if (imovel.index()) {
+  if (imovel.index(corretorAux.id_corretora )) {
     id_imovel = parseInt(prompt("ID do imóvel: "));
   } else {
     console.log("Cadastre um imóvel para realizar uma venda");
   }
-
-  if (corretor.show(id_corretor) &&
-cliente.show(id_cliente) && imovel.show(id_imovel)) {
+  const corretorAux = corretor.show(id_corretor);
+  const imovelAux = imovel.show(id_imovel);
+  if (
+    corretor.show(id_corretor) &&
+    imovelAux &&
+    corretorAux &&
+    corretorAux.id_corretora == imovelAux.id_corretora
+  ) {
     return {
       id,
       id_corretor,
       id_cliente,
-      id_imovel
-
-
+      id_imovel,
     };
   }
 
   console.log("Dados inválidos");
-
-  
 };
 
 const store = () => {

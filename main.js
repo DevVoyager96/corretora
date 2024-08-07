@@ -201,41 +201,39 @@ const menuImovel = () => {
 };
 
 const menuVenda = () => {
-    console.log("GERENCIAMENTO DE VENDAS");
-    while (true) {
-      console.log(`
+  console.log("GERENCIAMENTO DE VENDAS");
+  while (true) {
+    console.log(`ANTES DE CADASTRAR A VENDA VOCÊ PRECISA CADASTRAR A CORRETORA, O CORRETOR, O IMÓVEL E O CLIENTE.
                     1 - CADASTRAR VENDA
                     2 - LISTAR VENDAS
                     3 - ATUALIZAR VENDA
                     4 - EXCLUIR VENDA
                     0 - SAIR
                     `);
-  
-      const opcaoServico = parseInt(prompt(": "));
-  
-      switch (opcaoServico) {
-        case 1:
-          venda.store();
-          break;
-        case 2:
-          venda.index();
-          break;
-        case 3:
-          venda.update();
-          break;
-        case 4:
-          venda.destroy();
-          break;
-  
-        case 0:
-          return;
-        default:
-          console.log("OPCAO INVALIDA");
-          break;
-      }
+
+    const opcaoServico = parseInt(prompt(": "));
+
+    switch (opcaoServico) {
+      case 1:
+        venda.store();
+        break;
+      case 2:
+        venda.index();
+        break;
+      case 3:
+        venda.update();
+        break;
+      case 4:
+        venda.destroy();
+        break;
+
+      case 0:
+        return;
+      default:
+        console.log("OPCAO INVALIDA");
+        break;
     }
-  };
+  }
+};
 
 menuPrincipal();
-
-
