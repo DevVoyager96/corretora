@@ -4,6 +4,7 @@ const corretora = require("./modulos/corretora.js");
 const cliente = require("./modulos/cliente.js");
 const corretor = require("./modulos/corretor.js");
 const imovel = require("./modulos/imovel.js");
+const venda = require("./modulos/venda.js");
 
 const menuPrincipal = () => {
   console.log(`
@@ -18,6 +19,7 @@ const menuPrincipal = () => {
                   2 - CLIENTE
                   3 - CORRETOR
                   4 - IMÓVEL
+                  5 - VENDA
                   0 - SAIR
                   `);
 
@@ -38,6 +40,10 @@ const menuPrincipal = () => {
 
       case 4:
         menuImovel();
+        break;
+
+      case 5:
+        menuVenda();
         break;
 
       case 0:
@@ -159,30 +165,66 @@ const menuCorretora = () => {
 };
 
 const menuImovel = () => {
-    console.log("GERENCIAMENTO DE IMÓVEL");
-    while (true) {
-      console.log(`
+  console.log("GERENCIAMENTO DE IMÓVEL");
+  while (true) {
+    console.log(`
                   1 - CADASTRAR IMÓVEL
                   2 - LISTAR IMÓVEIS
                   3 - ATUALIZAR IMÓVEL
                   4 - EXCLUIR IMÓVEL
                   0 - SAIR
                   `);
+
+    const opcaoServico = parseInt(prompt(": "));
+
+    switch (opcaoServico) {
+      case 1:
+        imovel.store();
+        break;
+      case 2:
+        imovel.index();
+        break;
+      case 3:
+        imovel.update();
+        break;
+      case 4:
+        imovel.destroy();
+        break;
+
+      case 0:
+        return;
+      default:
+        console.log("OPCAO INVALIDA");
+        break;
+    }
+  }
+};
+
+const menuVenda = () => {
+    console.log("GERENCIAMENTO DE VENDAS");
+    while (true) {
+      console.log(`
+                    1 - CADASTRAR VENDA
+                    2 - LISTAR VENDAS
+                    3 - ATUALIZAR VENDA
+                    4 - EXCLUIR VENDA
+                    0 - SAIR
+                    `);
   
       const opcaoServico = parseInt(prompt(": "));
   
       switch (opcaoServico) {
         case 1:
-          imovel.store();
+          venda.store();
           break;
         case 2:
-          imovel.index();
+          venda.index();
           break;
         case 3:
-          imovel.update();
+          venda.update();
           break;
         case 4:
-          imovel.destroy();
+          venda.destroy();
           break;
   
         case 0:
